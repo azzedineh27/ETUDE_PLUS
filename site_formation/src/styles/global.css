@@ -1,0 +1,79 @@
+/* Empêcher le défilement horizontal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Empêcher le body de dépasser */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family : Arial ; 
+}
+
+  
+  /* Gestion des marges et espacements globaux */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Titres */
+  h1, h2, h3 {
+    font-weight: bold;
+    color: #0f3b67;
+  }
+  
+  /* Liens */
+  a {
+    text-decoration: none;
+    color: #0f3b67;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #e07b00;
+  }
+  
+  /* Boutons */
+  button {
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Flexbox Utility Classes */
+  .flex {
+    display: flex;
+  }
+  
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  }
+  

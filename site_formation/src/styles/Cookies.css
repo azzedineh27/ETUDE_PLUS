@@ -1,0 +1,48 @@
+.cookies-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: 2px solid #0f3b67;
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    z-index: 1000;
+  }
+  
+  .cookies-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .cookies-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .cookies-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-primary {
+    background-color: #0f3b67;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: #0f3b67;
+    border: 2px solid #0f3b67;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover, .btn-secondary:hover {
+    background-color: #e07b00;
+    color: white;
+  }
+  

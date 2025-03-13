@@ -1,0 +1,39 @@
+.avis {
+    background-color: #fdf2d6;
+    color: #000;
+    text-align: center;
+    padding: 60px 40px;
+  }
+  
+  .avis h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .avis-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .avis-card {
+    background-color: #ff8800;
+    color: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .avis-card p {
+    margin-bottom: 10px;
+  }
+  
+  .avis-card span {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  

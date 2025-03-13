@@ -1,0 +1,40 @@
+.formules {
+    background-color: #0f3b67;
+    color: white;
+    text-align: center;
+    padding: 60px 40px;
+  }
+  
+  .formules h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .formules-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .formule-card {
+    background-color: white;
+    color: #0f3b67;
+    padding: 20px;
+    width: 280px;
+    border-radius: 8px;
+    border: 3px solid orange;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formule-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .formule-card p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
