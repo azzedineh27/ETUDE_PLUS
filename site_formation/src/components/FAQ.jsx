@@ -13,6 +13,14 @@ const FAQ = () => {
     "Puis-je suivre la formation à mon propre rythme ?",
   ];
 
+  const answers = [
+    "Réponse pour la question 1 : (ajouter la réponse ici)",
+    "Réponse pour la question 2 : (ajouter la réponse ici)",
+    "Réponse pour la question 3 : (ajouter la réponse ici)",
+    "Réponse pour la question 4 : (ajouter la réponse ici)",
+    "Réponse pour la question 5 : (ajouter la réponse ici)",
+  ];
+
   const toggleQuestion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -28,7 +36,9 @@ const FAQ = () => {
               <FaChevronDown className="faq-icon" />
             </button>
             <div className="faq-answer">
-              <p>Réponse à la question ici...</p>
+              {openIndex === index && (
+                <p>{answers[index]}</p>
+              )}
             </div>
           </div>
         ))}

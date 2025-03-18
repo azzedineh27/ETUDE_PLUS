@@ -29,6 +29,7 @@
   flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
+  overflow: hidden; /* Empêche les débordements */
 }
 
 /* Formulaire stylisé */
@@ -43,10 +44,12 @@
   width: 400px;
   transition: transform 0.3s ease-in-out;
   border: 3px solid #ff8800; /* Contour orange */
+  max-width: 100%; /* Assure que le formulaire ne dépasse pas ses limites */
 }
 
 .contact-form:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05); /* Agrandissement du formulaire au survol */
+  overflow: hidden; /* Empêche les débordements lors de l'agrandissement */
 }
 
 /* Champs du formulaire */
@@ -77,11 +80,6 @@
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.contact-form button:hover {
-  background: #e07b00;
-  transform: scale(1.05);
 }
 
 /* Texte explicatif */

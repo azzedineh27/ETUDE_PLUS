@@ -17,11 +17,13 @@ const Navbar = () => {
         <li><a href="#formules">Nos Formules</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#avis">Nos Avis</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
 
       {/* Boutons à droite */}
       <div className="nav-buttons">
+        <a href="#contact">
+          <button className="btn">Contact</button>
+        </a>
         <button className="btn">FR</button>
       </div>
     </nav>

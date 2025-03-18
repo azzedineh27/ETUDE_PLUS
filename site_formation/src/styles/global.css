@@ -9,8 +9,8 @@
 /* Empêcher le body de dépasser */
 html, body {
   width: 100%;
-  overflow-x: hidden;
   font-family : Arial ; 
+  scroll-behavior: smooth; /* Active le défilement fluide */
 }
 
   
