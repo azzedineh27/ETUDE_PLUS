@@ -5,6 +5,7 @@ import Formules from "./components/Formules";
 import Contact from "./components/Contact";
 import Avis from "./components/Avis";
 import FAQ from "./components/FAQ";
+import EtudePlus from "./components/EtudePlus"; 
 import Footer from "./components/Footer";
 import Cookies from "./components/Cookies";
 
@@ -17,6 +18,7 @@ function App() {
       <Contact />
       <Avis />
       <FAQ />
+      <EtudePlus />
       <Footer />
       <Cookies />
     </div>

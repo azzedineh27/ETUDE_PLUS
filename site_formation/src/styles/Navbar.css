@@ -25,15 +25,26 @@
   }
   
   .menu li a {
+    position: relative;
     text-decoration: none;
-    color: #1e3a8a;
-    font-size: 18px;
-    font-weight: 500;
+    font-size : 18px ; 
   }
   
-  .menu li a:hover {
-    text-decoration: underline;
+  .menu li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff8800;
+    transition: width 0.3s ease;
   }
+  
+  .menu li a:hover::before {
+    width: 100%;
+  }
+  
   
   .nav-buttons {
     display: flex;
