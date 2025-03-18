@@ -1,10 +1,13 @@
 import React from "react";
-import "../styles/Contact.css"; // Import du fichier CSS
+import "../styles/Contact.css";
+import { FaEnvelope } from "react-icons/fa"; // Icône pour le titre
 
 const Contact = () => {
   return (
     <section className="contact">
-      <h2>CONTACTEZ NOUS</h2>
+      <h2 className="contact-title">
+        <FaEnvelope /> CONTACTEZ-NOUS
+      </h2>
       <div className="contact-container">
         {/* Formulaire */}
         <form className="contact-form">
@@ -18,14 +21,14 @@ const Contact = () => {
         {/* Texte explicatif */}
         <div className="contact-text">
           <p>
-            Vous avez des questions sur notre formation ? 
-            Laissez-nous vos coordonnées 📞 et nous vous contacterons pour tout vous expliquer en détail !
+            📞 Vous avez des questions sur notre formation ?  
+            Laissez-nous vos coordonnées et nous vous contacterons pour tout vous expliquer en détail !
           </p>
           <p>
-            Un échange rapide pour répondre à vos interrogations et vous aider à faire le bon choix ⏳.
+            ⏳ Un échange rapide pour répondre à vos interrogations et vous aider à faire le bon choix.
           </p>
           <p>
-            N’attendez plus, discutons-en ensemble ! 🚀
+            🚀 N’attendez plus, discutons-en ensemble !
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../styles/FAQ.css"; // Import du fichier CSS
+import "../styles/FAQ.css";
+import { FaChevronDown } from "react-icons/fa"; // Icône de flèche
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -18,19 +19,17 @@ const FAQ = () => {
 
   return (
     <section className="faq">
-      <h2>FOIRE AUX QUESTIONS (FAQ)</h2>
+      <h2 className="faq-title">FOIRE AUX QUESTIONS (FAQ)</h2>
       <div className="faq-container">
         {questions.map((question, index) => (
-          <div key={index} className="faq-item">
+          <div key={index} className={`faq-item ${openIndex === index ? "open" : ""}`}>
             <button className="faq-question" onClick={() => toggleQuestion(index)}>
               {question}
-              <span className="faq-icon">{openIndex === index ? "▲" : "▼"}</span>
+              <FaChevronDown className="faq-icon" />
             </button>
-            {openIndex === index && (
-              <div className="faq-answer">
-                <p>Réponse à la question ici...</p>
-              </div>
-            )}
+            <div className="faq-answer">
+              <p>Réponse à la question ici...</p>
+            </div>
           </div>
         ))}
       </div>

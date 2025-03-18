@@ -1,63 +1,100 @@
 .contact {
-    background-color: #fdf2d6;
-    color: #000;
-    text-align: center;
-    padding: 60px 40px;
-  }
-  
-  .contact h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-  }
-  
-  .contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-  }
-  
-  .contact-form {
-    background-color: #ff8800;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 350px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-  }
-  
-  .contact-form button {
-    background-color: white;
-    color: #ff8800;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .contact-form button:hover {
-    background-color: #e07b00;
-    color: white;
-  }
-  
-  .contact-text {
-    max-width: 450px;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
+  background-color: #0f3b67; /* Bleu foncé */
+  color: white;
+  text-align: center;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Titre stylisé avec icône */
+.contact-title {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #ff8800; /* Orange pour un bon contraste */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Conteneur du contact */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Formulaire stylisé */
+.contact-form {
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 400px;
+  transition: transform 0.3s ease-in-out;
+  border: 3px solid #ff8800; /* Contour orange */
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+}
+
+/* Champs du formulaire */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #0f3b67;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff8800; /* Highlight en orange */
+}
+
+/* Bouton d'envoi stylisé */
+.contact-form button {
+  background: #ff8800;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.contact-form button:hover {
+  background: #e07b00;
+  transform: scale(1.05);
+}
+
+/* Texte explicatif */
+.contact-text {
+  max-width: 450px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+  color: white;
+  background: rgba(255, 255, 255, 0.1); /* Légère transparence */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-left: 5px solid #ff8800; /* Accent orange sur le côté */
+}

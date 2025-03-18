@@ -1,47 +1,58 @@
 .accueil {
-    width: 100%;
-    padding: 60px 40px;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .accueil-container {
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding-top : 50px; 
+  width: 100%;
+  padding: 100px 40px; /* Réduit l'espace en haut */
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column; /* Permet de placer le h1 au-dessus */
+  align-items: center;
+}
 
-  }
-  
-  .accueil-text {
-    flex: 1;
-    color: #1e3a8a;
-  }
-  
-  .accueil-text h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .accueil-text h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
-  
-  .accueil-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  
-  .accueil-image img {
-    width: 400px;
-    height: auto;
-    border-radius: 5px;
-    border: 3px solid orange;
-  }
-  
+/* Titre h1 bien séparé au-dessus du contenu */
+.accueil-title {
+  text-align: center;
+  font-size: 48px; /* Augmente la taille du titre */
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 40px; /* Espace entre le titre et le contenu */
+  margin-top: 30px; /* Espace entre le titre et le contenu */
+  max-width: 80%;
+}
+
+/* Conteneur principal aligné à gauche */
+.accueil-container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Texte aligné à gauche */
+  gap: 40px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+/* Bloc texte */
+.accueil-text {
+  flex: 1;
+  color: #1e3a8a;
+}
+
+/* Taille et marges des titres et paragraphes */
+.accueil-text h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  max-width: 600px;
+}
+
+.accueil-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  max-width: 600px;
+}
+
+/* Image */
+.accueil-image img {
+  width: 450px;
+  height: auto;
+  border-radius: 5px;
+  border: 3px solid orange;
+}

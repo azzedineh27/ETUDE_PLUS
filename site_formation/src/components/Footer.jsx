@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/Footer.css"; // Import du fichier CSS
-import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa"; // Icônes des réseaux sociaux
+import "../styles/Footer.css";
+import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -33,14 +33,17 @@ const Footer = () => {
           <h3>Nos Réseaux</h3>
           <hr />
           <div className="social-icons">
-            <FaFacebook />
-            <FaLinkedin />
-            <FaWhatsapp />
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebook />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+            <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp />
+            </a>
           </div>
         </div>
-      </div>
-      <div className="footer-bottom">
-        Copyright © 2025 <span className="brand">Etude Plus</span>
       </div>
     </footer>
   );

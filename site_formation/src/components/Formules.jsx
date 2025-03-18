@@ -4,7 +4,7 @@ import "../styles/Formules.css"; // Import du fichier CSS
 const Formules = () => {
   return (
     <section className="formules">
-      <h2>NOS FORMULES</h2>
+      <h2 className="formules-title">NOS FORMULES</h2>
       <div className="formules-container">
         <div className="formule-card">
           <h3>STANDARD</h3>

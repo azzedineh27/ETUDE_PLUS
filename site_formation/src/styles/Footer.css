@@ -1,56 +1,87 @@
 .footer {
-    background-color: #0f3b67;
-    color: white;
-    padding: 40px 20px;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 250px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .footer-section h3 {
-    font-size: 18px;
-  }
-  
-  .footer-section hr {
-    width: 50px;
-    margin: 10px auto;
-    border: 1px solid orange;
-  }
-  
-  .footer-section p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  
-  .social-icons {
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-  }
-  
-  .footer-bottom {
-    background-color: #0d2a4a;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-  }
-  
-  .brand {
-    color: orange;
-    font-weight: bold;
-  }
-  
+  background-color: #0f3b67;
+  color: white;
+  padding: 30px 30px; /* Ajustement pour réduire la hauteur */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+  width: 100%;
+  position: relative;
+}
+
+/* Conteneur principal */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  flex-grow: 1;
+}
+
+/* Sections du footer */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Titres (Correction de la visibilité) */
+.footer-section h3 {
+  font-size: 22px; /* Augmenté pour être plus visible */
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: orange; /* Ajout d'une couleur contrastée */
+}
+
+/* Ligne de séparation sous les titres */
+.footer-section hr {
+  width: 50px;
+  margin: 8px auto;
+  border: 1px solid orange;
+}
+
+/* Texte */
+.footer-section p {
+  font-size: 17px; /* Légèrement plus grand */
+  line-height: 1.5;
+}
+
+/* Icônes des réseaux sociaux */
+.social-icons {
+  font-size: 28px; /* Augmenté pour plus de visibilité */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Icônes cliquables */
+.social-icons a {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: orange;
+}
+
+/* Ligne du Copyright */
+.footer::after {
+  content: "Copyright © 2025 Etude Plus";
+  display: block;
+  background-color: #0d2a4a;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

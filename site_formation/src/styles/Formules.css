@@ -1,40 +1,65 @@
 .formules {
-    background-color: #0f3b67;
-    color: white;
-    text-align: center;
-    padding: 60px 40px;
-  }
-  
-  .formules h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-  }
-  
-  .formules-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .formule-card {
-    background-color: white;
-    color: #0f3b67;
-    padding: 20px;
-    width: 280px;
-    border-radius: 8px;
-    border: 3px solid orange;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .formule-card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  .formule-card p {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
+  background-color: #0f3b67;
+  color: white;
+  text-align: center;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Empêche tout débordement */
+}
+
+/* Titre bien séparé et agrandi */
+.formules-title {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Conteneur des cartes */
+.formules-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  overflow: hidden; /* Empêche le débordement vertical */
+}
+
+/* Style des cartes */
+.formule-card {
+  background-color: white;
+  color: #0f3b67;
+  padding: 25px;
+  width: 300px;
+  border-radius: 10px;
+  border: 3px solid orange;
+  text-align: center;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.formule-card:hover {
+  transform: scale(1.05);
+}
+
+/* Empêche le scroll lors du survol */
+.formules-container:hover {
+  overflow: hidden;
+}
+
+/* Titres des cartes */
+.formule-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+/* Textes des cartes */
+.formule-card p {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
