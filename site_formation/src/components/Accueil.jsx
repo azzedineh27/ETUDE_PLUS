@@ -4,7 +4,7 @@ import formationImage from "../assets/formation_etude_plus.jpg"; // Correction d
 
 const Accueil = () => {
   return (
-    <section className="accueil">
+    <section className="accueil" id="accueil">
       <h1 className="accueil-title">
         REJOIGNEZ ETUDE PLUS FORMATION<br />POUR UN ACCOMPAGNEMENT IDÉAL !
       </h1>
@@ -25,6 +25,5 @@ const Accueil = () => {
     </section>
   );
 };
-
 
 export default Accueil;

@@ -5,7 +5,7 @@ import logoEtudePlus from "../assets/logo_etudeplus.png";
 
 const EtudePlus = () => {
   return (
-    <section className="etudeplus">
+    <section className="etudeplus" id="etudeplus">
       <div className="etudeplus-container">
         <div className="etudeplus-text">
           <h2>Le Saviez-vous ?</h2>
@@ -19,15 +19,13 @@ const EtudePlus = () => {
           <p>
             Nos formations sont ouvertes à tous, alors ne manquez pas cette occasion d'apprendre avec nous et d'élargir vos compétences !
           </p>
+          <a href="https://www.etudeplus.com/soutien-scolaire" className="btn-soutien">
+            Découvrez notre centre d'apprentissage
+          </a>
         </div>
 
-        {/* Image à droite */}
         <div className="etudeplus-image">
           <img src={formationImage} alt="Etude Plus - Nos projets" />
-          {/* Logo en bas de l'image */}
-          <div className="etudeplus-logo">
-            <img src={logoEtudePlus} alt="Logo Etude Plus" />
-          </div>
         </div>
       </div>
     </section>

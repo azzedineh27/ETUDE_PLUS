@@ -3,7 +3,7 @@ import "../styles/Formules.css"; // Import du fichier CSS
 
 const Formules = () => {
   return (
-    <section className="formules">
+    <section className="formules" id="formules">
       <h2 className="formules-title">NOS FORMULES</h2>
       <div className="formules-container">
         <div className="formule-card">

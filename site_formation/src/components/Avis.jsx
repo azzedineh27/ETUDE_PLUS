@@ -4,7 +4,7 @@ import { FaQuoteLeft } from "react-icons/fa"; // Icône pour styliser les avis
 
 const Avis = () => {
   return (
-    <section className="avis">
+    <section className="avis" id="avis" >
       <h2 className="avis-title">NOS AVIS</h2>
       <div className="avis-container">
         <div className="avis-card">

@@ -1,5 +1,4 @@
 .etudeplus {
-  background-color: #f8f9fa;
   padding: 60px 40px;
   color: #1e3a8a;
 }
@@ -10,7 +9,7 @@
   justify-content: space-between;
   gap: 40px;
   margin: auto;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .etudeplus-text {
@@ -34,29 +33,38 @@
   margin-bottom: 15px;
 }
 
+/* Amélioration du style de l'image */
 .etudeplus-image {
-  position: relative;
   flex: 1;
-  left: 70px; 
-  text-align: center; /* Centrer l'image et le logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .etudeplus-image img {
-  width: 100%;
-  max-width: 350px; /* Taille réduite de l'image */
+  width: 80%;
+  max-width: 600px; /* Augmenter la largeur maximale de l'image */
+  height: auto; /* Assurer que l'image garde ses proportions */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
-.etudeplus-logo {
-  margin-top: 15px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: inline-block; /* Permet d'afficher le logo sous l'image */
+/* Style pour le bouton avec lien */
+.btn-soutien {
+  display: inline-block;
+  background-color: #ff8800;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.etudeplus-logo img {
-  height: 40px; /* Taille du logo réduite */
+.btn-soutien:hover {
+  background-color: #e07b00;
+  color: white;
 }

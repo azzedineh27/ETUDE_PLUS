@@ -18,7 +18,21 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Mentions Légales</h3>
           <hr />
-          <p>Politique de confidentialité</p>
+          <p>
+            <a href="/politique-de-confidentialite" className="footer-link">
+              Politique de confidentialité
+            </a>
+          </p>
+        </div>
+
+        <div className="footer-section">
+          <h3>Etude Plus Scolaire</h3>
+          <hr />
+          <p>
+            <a href="https://etudeplus.org/" className="footer-link">
+              Découvrez notre centre d'apprentissage
+            </a>
+          </p>
         </div>
 
         <div className="footer-section">
@@ -33,10 +47,10 @@ const Footer = () => {
           <h3>Nos Réseaux</h3>
           <hr />
           <div className="social-icons">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/EtudePlus93/" target="_blank" rel="noopener noreferrer">
               <FaFacebook />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/etude-plus-seine-saint-denis/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
             <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">

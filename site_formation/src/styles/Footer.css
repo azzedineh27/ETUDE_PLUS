@@ -1,41 +1,38 @@
 .footer {
   background-color: #0f3b67;
   color: white;
-  padding: 30px 30px; /* Ajustement pour réduire la hauteur */
+  padding: 30px 30px;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 230px;
+  justify-content: space-between; /* Disposer les éléments sur une ligne */
+  align-items: flex-start; /* Centrer les éléments verticalement */
   width: 100%;
   position: relative;
+  min-height: 150px; /* Augmenter la hauteur pour donner plus de place */
 }
 
 /* Conteneur principal */
 .footer-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1200px;
   width: 100%;
   margin: auto;
-  flex-grow: 1;
+  gap: 40px; /* Espace entre les sections */
 }
 
 /* Sections du footer */
 .footer-section {
-  flex: 1;
-  min-width: 250px;
-  margin: 5px;
+  flex: 1; /* Chaque section prend une part égale de l'espace */
+  min-width: 200px; /* Largeur minimale des sections */
   text-align: center;
 }
 
-/* Titres (Correction de la visibilité) */
+/* Titres des sections */
 .footer-section h3 {
-  font-size: 22px; /* Augmenté pour être plus visible */
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: orange; /* Ajout d'une couleur contrastée */
+  color: orange;
 }
 
 /* Ligne de séparation sous les titres */
@@ -47,17 +44,30 @@
 
 /* Texte */
 .footer-section p {
-  font-size: 17px; /* Légèrement plus grand */
+  font-size: 17px;
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Liens */
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-link:hover {
+  color: orange;
+  text-decoration: none;
 }
 
 /* Icônes des réseaux sociaux */
 .social-icons {
-  font-size: 28px; /* Augmenté pour plus de visibilité */
+  font-size: 28px;
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 /* Icônes cliquables */

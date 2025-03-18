@@ -4,7 +4,7 @@ import { FaEnvelope } from "react-icons/fa"; // Icône pour le titre
 
 const Contact = () => {
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <h2 className="contact-title">
         <FaEnvelope /> CONTACTEZ-NOUS
       </h2>
