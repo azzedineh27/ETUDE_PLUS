@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import "../styles/FAQ.css";
 import { FaChevronDown } from "react-icons/fa"; // Icône de flèche
+import { useTranslation } from "react-i18next"; // Import du hook i18next
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
+  const { t } = useTranslation(); // Utilisation du hook pour obtenir la fonction de traduction
+
   const questions = [
-    "Comment accéder aux cours après mon inscription ?",
-    "Y a-t-il un accompagnement ou un suivi personnalisé ?",
-    "Quels sont les prérequis pour suivre la formation ?",
-    "Comment obtenir mon certificat en fin de formation ?",
-    "Puis-je suivre la formation à mon propre rythme ?",
+    t("faq_question_1"),  // Utilisation des clés de traduction
+    t("faq_question_2"),
+    t("faq_question_3"),
+    t("faq_question_4"),
+    t("faq_question_5")
   ];
 
   const answers = [
-    "Réponse pour la question 1 : (ajouter la réponse ici)",
-    "Réponse pour la question 2 : (ajouter la réponse ici)",
-    "Réponse pour la question 3 : (ajouter la réponse ici)",
-    "Réponse pour la question 4 : (ajouter la réponse ici)",
-    "Réponse pour la question 5 : (ajouter la réponse ici)",
+    t("faq_answer_1"),  // Utilisation des clés de traduction
+    t("faq_answer_2"),
+    t("faq_answer_3"),
+    t("faq_answer_4"),
+    t("faq_answer_5")
   ];
 
   const toggleQuestion = (index) => {
@@ -27,7 +30,7 @@ const FAQ = () => {
 
   return (
     <section className="faq" id="faq">
-      <h2 className="faq-title">FOIRE AUX QUESTIONS (FAQ)</h2>
+      <h2 className="faq-title">{t("faq_title")}</h2>
       <div className="faq-container">
         {questions.map((question, index) => (
           <div key={index} className={`faq-item ${openIndex === index ? "open" : ""}`}>

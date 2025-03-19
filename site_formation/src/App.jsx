@@ -8,6 +8,7 @@ import FAQ from "./components/FAQ";
 import EtudePlus from "./components/EtudePlus"; 
 import Footer from "./components/Footer";
 import Cookies from "./components/Cookies";
+import '../i18n';
 
 function App() {
   useEffect(() => {

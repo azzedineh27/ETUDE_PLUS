@@ -1,8 +1,17 @@
 import React from "react";
 import "../styles/Footer.css";
 import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { useTranslation } from "react-i18next"; // Import du hook i18next
 
 const Footer = () => {
+
+  const { t, i18n } = useTranslation(); // Utilisation du hook pour obtenir la fonction changeLanguage
+  
+    // Fonction pour changer la langue
+    const changeLanguage = (lang) => {
+      i18n.changeLanguage(lang);
+    };
+    
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -10,17 +19,16 @@ const Footer = () => {
           <h3>Etude Plus Formation</h3>
           <hr />
           <p>
-            Etude Plus Formation est un centre de formation proposant différents diplômes
-            d’apprentissage de la langue française.
+          {t("footer_about")}
           </p>
         </div>
 
         <div className="footer-section">
-          <h3>Mentions Légales</h3>
+          <h3>{t("footer_mentions")}</h3>
           <hr />
           <p>
             <a href="/politique-de-confidentialite" className="footer-link">
-              Politique de confidentialité
+            {t("footer_privacy")}
             </a>
           </p>
         </div>
@@ -30,7 +38,7 @@ const Footer = () => {
           <hr />
           <p>
             <a href="https://etudeplus.org/" className="footer-link">
-              Découvrez notre centre d'apprentissage
+            {t("footer_etudeplus")}
             </a>
           </p>
         </div>
@@ -38,13 +46,13 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Contact</h3>
           <hr />
-          <p>🏠 Fédération Etude Plus</p>
-          <p>📍 16 Boulevard Saint-Germain, 75005 Paris</p>
-          <p>📞 +33 (0)9 54 76 34 02</p>
+          <p>{t("footer_contact")}</p>
+          <p>{t("footer_address")}</p>
+          <p>{t("footer_phone")}</p>
         </div>
 
         <div className="footer-section">
-          <h3>Nos Réseaux</h3>
+          <h3>{t("footer_social")}</h3>
           <hr />
           <div className="social-icons">
             <a href="https://www.facebook.com/EtudePlus93/" target="_blank" rel="noopener noreferrer">

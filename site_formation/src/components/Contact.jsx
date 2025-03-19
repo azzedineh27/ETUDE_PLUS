@@ -1,34 +1,42 @@
 import React from "react";
 import "../styles/Contact.css";
 import { FaEnvelope } from "react-icons/fa"; // Icône pour le titre
+import { useTranslation } from "react-i18next"; // Import du hook i18next
 
 const Contact = () => {
+
+  const { t, i18n } = useTranslation(); // Utilisation du hook pour obtenir la fonction changeLanguage
+  
+    // Fonction pour changer la langue
+    const changeLanguage = (lang) => {
+      i18n.changeLanguage(lang);
+    };
+    
   return (
     <section className="contact" id="contact">
       <h2 className="contact-title">
-        <FaEnvelope /> CONTACTEZ-NOUS
+        <FaEnvelope /> {t("contact_title")}
       </h2>
       <div className="contact-container">
         {/* Formulaire */}
         <form className="contact-form">
-          <input type="text" placeholder="Nom - Prénom" required />
-          <input type="email" placeholder="E-mail" required />
-          <input type="tel" placeholder="Téléphone" required />
+          <input type="text" placeholder={t("contact_nom_prenom")} required />
+          <input type="email" placeholder={t("contact_email")} required />
+          <input type="tel" placeholder={t("contact_telephone")} required />
           <textarea placeholder="Message" rows="4" required></textarea>
-          <button type="submit">Envoyer</button>
+          <button type="submit">{t("contact_submit")}</button>
         </form>
 
         {/* Texte explicatif */}
         <div className="contact-text">
           <p>
-            📞 Vous avez des questions sur notre formation ?  
-            Laissez-nous vos coordonnées et nous vous contacterons pour tout vous expliquer en détail !
+          {t("contact_text_1")}
           </p>
           <p>
-            ⏳ Un échange rapide pour répondre à vos interrogations et vous aider à faire le bon choix.
+          {t("contact_text_2")}
           </p>
           <p>
-            🚀 N’attendez plus, discutons-en ensemble !
+          {t("contact_text_3")}
           </p>
         </div>
       </div>
