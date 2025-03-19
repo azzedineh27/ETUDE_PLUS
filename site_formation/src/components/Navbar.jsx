@@ -13,10 +13,10 @@ const Navbar = () => {
       {/* Menu */}
       <ul className="menu">
         <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#etudeplus">Le Saviez-vous ?</a></li>
         <li><a href="#formules">Nos Formules</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#avis">Nos Avis</a></li>
+        <li><a href="#etudeplus">Etude Plus</a></li>
       </ul>
 
       {/* Boutons à droite */}

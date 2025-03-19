@@ -19,7 +19,7 @@ const EtudePlus = () => {
           <p>
             Nos formations sont ouvertes à tous, alors ne manquez pas cette occasion d'apprendre avec nous et d'élargir vos compétences !
           </p>
-          <a href="https://www.etudeplus.com/soutien-scolaire" className="btn-soutien">
+          <a href="https://www.etudeplus.org" className="btn-soutien">
             Découvrez notre centre d'apprentissage
           </a>
         </div>
