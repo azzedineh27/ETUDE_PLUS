@@ -1,35 +1,52 @@
 import React from "react";
-import "../styles/Formules.css"; // Import du fichier CSS
-import { useTranslation } from "react-i18next"; // Import du hook i18next
+import "../styles/Formules.css";
+import { useTranslation } from "react-i18next";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Formules = () => {
+  const { t } = useTranslation();
 
-  const { t, i18n } = useTranslation(); // Utilisation du hook pour obtenir la fonction changeLanguage
-  
-    // Fonction pour changer la langue
-    const changeLanguage = (lang) => {
-      i18n.changeLanguage(lang);
-    };
-    
+  const offres = [
+    {
+      titre: t("formules_standard_title"),
+      texte: t("formules_standard_text"),
+      prix: t("formules_standard_price"),
+      avantages: ["10h de cours", "Support en ligne", "Préparation DALF"],
+      style: "standard"
+    },
+    {
+      titre: t("formules_medium_title"),
+      texte: t("formules_medium_text"),
+      prix: t("formules_medium_price"),
+      avantages: ["20h de cours", "Accès illimité", "Suivi personnalisé", "Préparation DALF"],
+      style: "medium",
+    },
+    {
+      titre: t("formules_premium_title"),
+      texte: t("formules_premium_text"),
+      prix: t("formules_premium_price"),
+      avantages: ["30h de cours", "Coaching individuel", "Correction détaillée", "Préparation DALF"],
+      style: "premium"
+    }
+  ];
+
   return (
     <section className="formules" id="formules">
       <h2 className="formules-title">{t("formules_title")}</h2>
       <div className="formules-container">
-        <div className="formule-card">
-          <h3>{t("formules_standard_title")}</h3>
-          <p>{t("formules_standard_text")}</p>
-          <p>{t("formules_standard_price")}</p>
-        </div>
-        <div className="formule-card">
-          <h3>{t("formules_medium_title")}</h3>
-          <p>{t("formules_medium_text")}</p>
-          <p>{t("formules_medium_price")}</p>
-        </div>
-        <div className="formule-card">
-          <h3>{t("formules_premium_title")}</h3>
-          <p>{t("formules_premium_text")}</p>
-          <p>{t("formules_premium_price")}</p>
-        </div>
+        {offres.map((offre, index) => (
+          <div className={`formule-card ${offre.style}`} key={index}>
+            <h3>{offre.titre}</h3>
+            <p className="formule-description">{offre.texte}</p>
+            <ul className="formule-liste">
+              {offre.avantages.map((avantage, idx) => (
+                <li key={idx}><FaCheckCircle className="check-icon" /> {avantage}</li>
+              ))}
+            </ul>
+            <p className="prix">{offre.prix}</p>
+            <button className="btn-formule">Choisir cette formule</button>
+          </div>
+        ))}
       </div>
     </section>
   );

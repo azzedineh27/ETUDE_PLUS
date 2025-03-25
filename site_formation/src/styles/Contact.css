@@ -47,11 +47,6 @@
   max-width: 100%; /* Assure que le formulaire ne dépasse pas ses limites */
 }
 
-.contact-form:hover {
-  transform: scale(1.05); /* Agrandissement du formulaire au survol */
-  overflow: hidden; /* Empêche les débordements lors de l'agrandissement */
-}
-
 /* Champs du formulaire */
 .contact-form input,
 .contact-form textarea {
