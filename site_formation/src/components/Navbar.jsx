@@ -38,6 +38,7 @@ const Navbar = () => {
           <select onChange={changeLanguage} className="dropdown">
             <option value="fr">{t('navbar_language_fr')}</option>
             <option value="en">{t('navbar_language_en')}</option>
+            <option value="spa">{t('navbar_language_spa')}</option>
           </select>
         </div>
       </div>

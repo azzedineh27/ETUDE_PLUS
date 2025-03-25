@@ -96,3 +96,30 @@
   backdrop-filter: blur(5px);
   border-left: 5px solid #ff8800; /* Accent orange sur le côté */
 }
+
+.contact-notification {
+  margin-top: 20px;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Succès */
+.contact-notification.success {
+  background-color: #eafaf1;
+  color: #1e3a8a;
+  border-left: 6px solid #28a745;
+}
+
+/* Erreur */
+.contact-notification.error {
+  background-color: #ffeaea;
+  color: #a50000;
+  border-left: 6px solid #dc3545;
+}
+
