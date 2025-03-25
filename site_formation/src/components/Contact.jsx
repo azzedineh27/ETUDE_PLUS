@@ -12,8 +12,8 @@ const Contact = () => {
 
   const validateForm = (formData) => {
     const nameRegex = /^[a-zA-ZÀ-ÿ' -]{2,50}$/;
-    const emailRegex = /^[\\w-.]+@[\\w-]+\\.[a-z]{2,}$/i;
-    const phoneRegex = /^\\+?[0-9\\s().-]{7,20}$/;
+    const emailRegex = /^[\w.-]+@[\w.-]+\.[a-z]{2,}$/i;
+    const phoneRegex = /^\+?[0-9\s().-]{7,20}$/;
 
     if (!nameRegex.test(formData.name)) {
       return "❌ Nom invalide.";
