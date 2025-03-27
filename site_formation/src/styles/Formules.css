@@ -122,3 +122,12 @@
 .premium {
   border-top-color: #ff8800;
 }
+.malus {
+  color: #cc0000;
+  font-weight: 500;
+}
+
+.times-icon {
+  color: #cc0000;
+  margin-right: 8px;
+}

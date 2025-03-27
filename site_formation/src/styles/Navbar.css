@@ -66,6 +66,13 @@
     background-color: #e07b00;
   }
   
+
+  .language-dropdown .dropdown-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
   .dropdown {
     background-color: #ff8800;
     color: white;
@@ -75,9 +82,23 @@
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease;
+    appearance: none; /* pour supprimer le style natif */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px; /* laisse de la place pour la flèche */
+  }
+  .dropdown-arrow {
+    position: absolute;
+    right: 12px;
+    pointer-events: none; /* laisse les clics passer sur le select */
+    color: white;
+    font-size: 20px;
   }
   
-  .dropdown:hover {
-    background-color: #e07b00;
+  .dropdown:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: #ff8800;
+    color: white;
   }
   

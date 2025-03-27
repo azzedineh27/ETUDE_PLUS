@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next"; // Import du hook i18next
 import "../styles/Navbar.css"; // Import du fichier CSS
 import logo from "../assets/etudeplusformation.jpg";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation(); // Utilisation du hook pour obtenir la fonction changeLanguage
@@ -33,14 +34,17 @@ const Navbar = () => {
           <button className="btn">{t('navbar_button_contact')}</button>
         </a>
 
-        {/* Dropdown pour changer la langue */}
         <div className="language-dropdown">
-          <select onChange={changeLanguage} className="dropdown">
-            <option value="fr">{t('navbar_language_fr')}</option>
-            <option value="en">{t('navbar_language_en')}</option>
-            <option value="spa">{t('navbar_language_spa')}</option>
-          </select>
+          <div className="dropdown-wrapper">
+            <select onChange={changeLanguage} className="dropdown">
+              <option value="fr">{t('navbar_language_fr')}</option>
+              <option value="en">{t('navbar_language_en')}</option>
+              <option value="spa">{t('navbar_language_spa')}</option>
+            </select>
+            <MdOutlineKeyboardArrowDown className="dropdown-arrow" />
+          </div>
         </div>
+
       </div>
     </nav>
   );

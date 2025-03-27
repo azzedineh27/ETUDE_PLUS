@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Formules.css";
 import { useTranslation } from "react-i18next";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; // ⬅️ Ajout de l'icône rouge
 
 const Formules = () => {
   const { t } = useTranslation();
@@ -12,6 +12,7 @@ const Formules = () => {
       texte: t("formules_standard_text"),
       prix: t("formules_standard_price"),
       avantages: ["10h de cours", "Support en ligne", "Préparation DALF"],
+      malus: ["Pas de suivi personnalisé"], // ⬅️ Ajout ici
       style: "standard"
     },
     {
@@ -19,7 +20,7 @@ const Formules = () => {
       texte: t("formules_medium_text"),
       prix: t("formules_medium_price"),
       avantages: ["20h de cours", "Accès illimité", "Suivi personnalisé", "Préparation DALF"],
-      style: "medium",
+      style: "medium"
     },
     {
       titre: t("formules_premium_title"),
@@ -40,7 +41,16 @@ const Formules = () => {
             <p className="formule-description">{offre.texte}</p>
             <ul className="formule-liste">
               {offre.avantages.map((avantage, idx) => (
-                <li key={idx}><FaCheckCircle className="check-icon" /> {avantage}</li>
+                <li key={idx}>
+                  <FaCheckCircle className="check-icon" /> {avantage}
+                </li>
+              ))}
+
+              {/* ➕ Affichage des malus s'ils existent */}
+              {offre.malus?.map((malus, idx) => (
+                <li key={`malus-${idx}`} className="malus">
+                  <FaTimesCircle className="times-icon" /> {malus}
+                </li>
               ))}
             </ul>
             <p className="prix">{offre.prix}</p>
