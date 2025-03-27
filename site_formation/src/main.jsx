@@ -3,12 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles/global.css"; // Import du fichier global
 
-// ✅ Ajout de GA
-const GA_ID = "G-XXXXXXXXXX"; // Remplace par ton ID
+
+// ✅ Google Analytics
+const GA_ID = "G-9H1G9WVYPD";
 
 const insertGA = () => {
   const script1 = document.createElement("script");
-  script1.setAttribute("async", "");
+  script1.async = true;
   script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   document.head.appendChild(script1);
 
@@ -22,9 +23,9 @@ const insertGA = () => {
   document.head.appendChild(script2);
 };
 
-insertGA(); // Appel au démarrage
+insertGA();
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
