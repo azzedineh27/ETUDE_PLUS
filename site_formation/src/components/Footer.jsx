@@ -32,7 +32,7 @@ const Footer = () => {
           <hr />
           <p>
             <a
-              href="./src/assets/rgpd_etudeplusformation.pdf"
+              href="/rgpd_etudeplusformation.pdf"
               className="footer-link"
               download
               target="_blank"
@@ -40,6 +40,7 @@ const Footer = () => {
             >
               {sanitize(t("footer_privacy"))}
             </a>
+
           </p>
         </div>
 
