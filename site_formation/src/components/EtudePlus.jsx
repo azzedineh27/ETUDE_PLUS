@@ -3,14 +3,24 @@ import "../styles/EtudePlus.css";
 import formationImage from "../assets/formation_etude_plus.jpg";
 import { useTranslation } from "react-i18next";
 import { FaBookOpen, FaGraduationCap, FaUserFriends } from "react-icons/fa";
+import DOMPurify from "dompurify";
 
 const EtudePlus = () => {
   const { t } = useTranslation();
 
+  // Fonction de nettoyage stricte
+  const sanitize = (value) => {
+    return DOMPurify.sanitize(value, {
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+      FORBID_ATTR: ["style", "onerror", "onload"]
+    });
+  };
+
   const points = [
-    t("etudeplus_text_1"),
-    t("etudeplus_text_2"),
-    t("etudeplus_text_3")
+    sanitize(t("etudeplus_text_1")),
+    sanitize(t("etudeplus_text_2")),
+    sanitize(t("etudeplus_text_3"))
   ];
 
   const icons = [<FaBookOpen />, <FaGraduationCap />, <FaUserFriends />];
@@ -23,18 +33,18 @@ const EtudePlus = () => {
         </div>
 
         <div className="etudeplus-text">
-          <h2>{t("etudeplus_title")}</h2>
-          <h3>{t("etudeplus_subtitle")}</h3>
+          <h2 dangerouslySetInnerHTML={{ __html: sanitize(t("etudeplus_title")) }} />
+          <h3 dangerouslySetInnerHTML={{ __html: sanitize(t("etudeplus_subtitle")) }} />
           <div className="etudeplus-points">
             {points.map((text, index) => (
               <div className="etudeplus-point" key={index}>
                 <span className="etudeplus-icon">{icons[index]}</span>
-                <p>{text}</p>
+                <p dangerouslySetInnerHTML={{ __html: text }} />
               </div>
             ))}
           </div>
           <a href="https://www.etudeplus.org" className="btn-soutien">
-            {t("etudeplus_button")}
+            {sanitize(t("etudeplus_button"))}
           </a>
         </div>
       </div>

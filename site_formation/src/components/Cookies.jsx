@@ -1,20 +1,35 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Cookies.css";
 import { useTranslation } from "react-i18next";
+import DOMPurify from "dompurify";
 
 const Cookies = () => {
-  const { t, i18n } = useTranslation(); // ✅ Tous les hooks doivent être appelés en haut
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(true);
 
+  // Configuration de DOMPurify avec autorisation limitée
+  const sanitize = (value) => {
+    return DOMPurify.sanitize(value, {
+      ALLOWED_TAGS: ["a"],    // Autorise uniquement les liens
+      ALLOWED_ATTR: ["href", "target", "rel"],
+      ADD_ATTR: ['target']    // Pour forcer l'ouverture dans un nouvel onglet
+    });
+  };
+
+  useEffect(() => {
+    if (!localStorage.getItem("sessionStartTime")) {
+      localStorage.setItem("sessionStartTime", Date.now());
+    }
+  }, []);
+  
   useEffect(() => {
     const beforeUnloadHandler = () => {
-      recordSessionTime(); // Enregistre la session avant de quitter
+      recordSessionTime();
     };
 
     window.addEventListener("beforeunload", beforeUnloadHandler);
     return () => window.removeEventListener("beforeunload", beforeUnloadHandler);
   }, []);
-
 
   const insertGA = () => {
     const GA_ID = "G-9H1G9WVYPD";
@@ -36,7 +51,7 @@ const Cookies = () => {
   
   const handleAccept = () => {
     localStorage.setItem("cookiesAccepted", "true");
-    insertGA(); // ✅ activer GA uniquement après consentement
+    insertGA();
     recordSessionTime();
     setVisible(false);
   };
@@ -52,17 +67,13 @@ const Cookies = () => {
     if (sessionStartTime) {
       const now = Date.now();
       const duration = now - parseInt(sessionStartTime, 10);
-
       const previous = parseInt(localStorage.getItem("totalTimeSpent") || "0", 10);
-      const newTotal = previous + duration;
-
-      localStorage.setItem("totalTimeSpent", newTotal);
+      localStorage.setItem("totalTimeSpent", previous + duration);
       localStorage.setItem("sessionStartTime", now);
 
-      // ✅ N'envoie vers GA que si l'utilisateur a accepté
       if (localStorage.getItem("cookiesAccepted") === "true" && window.gtag) {
         window.gtag("event", "time_spent", {
-          value: Math.round(duration / 1000), // secondes
+          value: Math.round(duration / 1000),
           unit: "seconds",
         });
       }
@@ -71,22 +82,17 @@ const Cookies = () => {
 
   if (!visible) return null;
 
-  // Optionnel : changer la langue manuellement
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-  };
-
   return (
     <div className="cookies-popup">
       <div className="cookies-content">
-        <h3>{t("cookies_title")}</h3>
-        <p>{t("cookies_text")}</p>
+        <h3 dangerouslySetInnerHTML={{ __html: sanitize(t("cookies_title")) }} />
+        <p dangerouslySetInnerHTML={{ __html: sanitize(t("cookies_text")) }} />
         <div className="cookies-buttons">
           <button className="btn-primary" onClick={handleAccept}>
-            {t("cookies_accept")}
+            <span dangerouslySetInnerHTML={{ __html: sanitize(t("cookies_accept")) }} />
           </button>
           <button className="btn-secondary" onClick={handleReject}>
-            {t("cookies_reject")}
+            <span dangerouslySetInnerHTML={{ __html: sanitize(t("cookies_reject")) }} />
           </button>
         </div>
       </div>

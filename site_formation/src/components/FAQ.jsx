@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 import "../styles/FAQ.css";
-import { FaChevronDown } from "react-icons/fa"; // Icône de flèche
-import { useTranslation } from "react-i18next"; // Import du hook i18next
+import { FaChevronDown } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import DOMPurify from "dompurify";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const { t } = useTranslation();
 
-  const { t } = useTranslation(); // Utilisation du hook pour obtenir la fonction de traduction
+  const sanitize = (value) =>
+    DOMPurify.sanitize(value, {
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+      FORBID_ATTR: ["style", "onerror", "onload"]
+    });
 
   const questions = [
-    t("faq_question_1"),  // Utilisation des clés de traduction
-    t("faq_question_2"),
-    t("faq_question_3"),
-    t("faq_question_4"),
-    t("faq_question_5")
+    sanitize(t("faq_question_1")),
+    sanitize(t("faq_question_2")),
+    sanitize(t("faq_question_3")),
+    sanitize(t("faq_question_4")),
+    sanitize(t("faq_question_5")),
   ];
 
   const answers = [
-    t("faq_answer_1"),  // Utilisation des clés de traduction
-    t("faq_answer_2"),
-    t("faq_answer_3"),
-    t("faq_answer_4"),
-    t("faq_answer_5")
+    sanitize(t("faq_answer_1")),
+    sanitize(t("faq_answer_2")),
+    sanitize(t("faq_answer_3")),
+    sanitize(t("faq_answer_4")),
+    sanitize(t("faq_answer_5")),
   ];
 
   const toggleQuestion = (index) => {
@@ -30,17 +37,17 @@ const FAQ = () => {
 
   return (
     <section className="faq" id="faq">
-      <h2 className="faq-title">{t("faq_title")}</h2>
+      <h2 className="faq-title" dangerouslySetInnerHTML={{ __html: sanitize(t("faq_title")) }} />
       <div className="faq-container">
         {questions.map((question, index) => (
           <div key={index} className={`faq-item ${openIndex === index ? "open" : ""}`}>
             <button className="faq-question" onClick={() => toggleQuestion(index)}>
-              {question}
+              <span dangerouslySetInnerHTML={{ __html: question }} />
               <FaChevronDown className="faq-icon" />
             </button>
             <div className="faq-answer">
               {openIndex === index && (
-                <p>{answers[index]}</p>
+                <p dangerouslySetInnerHTML={{ __html: answers[index] }} />
               )}
             </div>
           </div>

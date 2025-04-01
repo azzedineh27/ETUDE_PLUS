@@ -1,34 +1,44 @@
 import React from "react";
 import "../styles/Footer.css";
 import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { useTranslation } from "react-i18next"; // Import du hook i18next
+import { useTranslation } from "react-i18next";
+import DOMPurify from "dompurify";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
 
-  const { t, i18n } = useTranslation(); // Utilisation du hook pour obtenir la fonction changeLanguage
-  
-    // Fonction pour changer la langue
-    const changeLanguage = (lang) => {
-      i18n.changeLanguage(lang);
-    };
-    
+  const sanitize = (value) =>
+    DOMPurify.sanitize(value, {
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+      FORBID_ATTR: ["style", "onerror", "onload"]
+    });
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
           <h3>Etude Plus Formation</h3>
           <hr />
-          <p>
-          {t("footer_about")}
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: sanitize(t("footer_about")) }} />
         </div>
 
         <div className="footer-section">
-          <h3>{t("footer_mentions")}</h3>
+          <h3 dangerouslySetInnerHTML={{ __html: sanitize(t("footer_mentions")) }} />
           <hr />
           <p>
-            <a href="/politique-de-confidentialite" className="footer-link">
-            {t("footer_privacy")}
+            <a
+              href="./src/assets/rgpd_etudeplusformation.pdf"
+              className="footer-link"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {sanitize(t("footer_privacy"))}
             </a>
           </p>
         </div>
@@ -38,7 +48,7 @@ const Footer = () => {
           <hr />
           <p>
             <a href="https://etudeplus.org/" className="footer-link">
-            {t("footer_etudeplus")}
+              {sanitize(t("footer_etudeplus"))}
             </a>
           </p>
         </div>
@@ -46,13 +56,13 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Contact</h3>
           <hr />
-          <p>{t("footer_contact")}</p>
-          <p>{t("footer_address")}</p>
-          <p>{t("footer_phone")}</p>
+          <p dangerouslySetInnerHTML={{ __html: sanitize(t("footer_contact")) }} />
+          <p dangerouslySetInnerHTML={{ __html: sanitize(t("footer_address")) }} />
+          <p dangerouslySetInnerHTML={{ __html: sanitize(t("footer_phone")) }} />
         </div>
 
         <div className="footer-section">
-          <h3>{t("footer_social")}</h3>
+          <h3 dangerouslySetInnerHTML={{ __html: sanitize(t("footer_social")) }} />
           <hr />
           <div className="social-icons">
             <a href="https://www.facebook.com/EtudePlus93/" target="_blank" rel="noopener noreferrer">

@@ -1,36 +1,28 @@
 import React from "react";
 import "../styles/Avis.css";
-import { FaQuoteLeft } from "react-icons/fa"; // Icône pour styliser les avis
-import { useTranslation } from "react-i18next"; // Import du hook i18next
+import { FaQuoteLeft } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import DOMPurify from "dompurify";
 
 const Avis = () => {
+  const { t, i18n } = useTranslation();
+  const sanitize = (content) => DOMPurify.sanitize(content, { ALLOWED_TAGS: ["em", "strong"] }); // Autorise les balises de mise en forme
 
-  const { t, i18n } = useTranslation(); // Utilisation du hook pour obtenir la fonction changeLanguage
-  
-    // Fonction pour changer la langue
-    const changeLanguage = (lang) => {
-      i18n.changeLanguage(lang);
-    };
-    
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(sanitize(lang)); // Purification optionnelle (lang est généralement contrôlée en interne)
+  };
+
   return (
-    <section className="avis" id="avis" >
-      <h2 className="avis-title">{t("avis_title")}</h2>
+    <section className="avis" id="avis">
+      <h2 className="avis-title" dangerouslySetInnerHTML={{ __html: sanitize(t("avis_title")) }} />
       <div className="avis-container">
-        <div className="avis-card">
-          <FaQuoteLeft size={20} color="#ff8800" />
-          <p>{t('avis_card_1')}</p>
-          <span>{t('avis_card_1_name')}</span>
-        </div>
-        <div className="avis-card">
-          <FaQuoteLeft size={20} color="#ff8800" />
-          <p>{t('avis_card_2')}</p>
-          <span>{t('avis_card_2_name')}</span>
-        </div>
-        <div className="avis-card">
-          <FaQuoteLeft size={20} color="#ff8800" />
-          <p>{t('avis_card_3')}</p>
-          <span>{t('avis_card_3_name')}</span>
-        </div>
+        {[1, 2, 3].map((cardId) => (
+          <div key={cardId} className="avis-card">
+            <FaQuoteLeft size={20} color="#ff8800" />
+            <p dangerouslySetInnerHTML={{ __html: sanitize(t(`avis_card_${cardId}`)) }} />
+            <span dangerouslySetInnerHTML={{ __html: sanitize(t(`avis_card_${cardId}_name`)) }} />
+          </div>
+        ))}
       </div>
     </section>
   );
