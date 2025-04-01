@@ -100,21 +100,37 @@
   font-weight: bold;
   max-width: 600px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.3s ease-in-out;
+  animation: fadeInOut 4s forwards;
 }
 
-/* Succès */
 .contact-notification.success {
   background-color: #eafaf1;
   color: #1e3a8a;
   border-left: 6px solid #28a745;
 }
 
-/* Erreur */
 .contact-notification.error {
   background-color: #ffeaea;
   color: #a50000;
   border-left: 6px solid #dc3545;
 }
 
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.contact-notification .emoji {
+  font-size: 24px;
+}
+
+.contact-notification .message-text {
+  flex: 1;
+}
