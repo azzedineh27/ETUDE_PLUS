@@ -94,7 +94,8 @@
 }
 
 .btn-formule:hover {
-  background-color: #e07b00;
+  text-decoration: underline;
+  color : white; 
 }
 
 .badge {

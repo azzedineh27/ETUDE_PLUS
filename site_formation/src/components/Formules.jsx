@@ -60,7 +60,10 @@ const Formules = () => {
               ))}
             </ul>
             <p className="prix" dangerouslySetInnerHTML={{ __html: offre.prix }} />
-            <button className="btn-formule">{sanitize("Choisir cette formule")}</button>
+            <a href="#contact" className="btn-formule">
+              {sanitize("Nous contacter")}
+            </a>
+
           </div>
         ))}
       </div>
