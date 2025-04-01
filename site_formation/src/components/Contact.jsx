@@ -11,7 +11,12 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [lastSentTime, setLastSentTime] = useState(null);
 
-
+  const injection = (value) => {
+    const div = document.createElement("div");
+    div.textContent = value;
+    return div.innerHTML;
+  };
+  
   const validateForm = (formData) => {
     const nameRegex = /^[a-zA-ZÀ-ÿ' -]{2,50}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -58,11 +63,12 @@ const Contact = () => {
       }
   
       const formData = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        tel: form.tel.value.trim(),
-        message: form.message.value.trim(),
+        name: injection(form.name.value.trim()),
+        email: injection(form.email.value.trim()),
+        tel: injection(form.tel.value.trim()),
+        message: injection(form.message.value.trim()),
       };
+      
   
       const errorMsg = validateForm(formData);
       if (errorMsg) {
@@ -122,7 +128,7 @@ const Contact = () => {
       )}
 
       <div className="contact-container">
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={handleSubmit} noValidate>
           {/* Honeypot anti-bot */}
           <input
             type="text"
