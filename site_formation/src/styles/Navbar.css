@@ -14,7 +14,10 @@
   
   .logo img {
     height: 45px;
+    width: auto; /* <-- important pour garder les proportions naturelles */
+    object-fit: contain; /* sécurité en plus pour éviter l'étirement */
   }
+  
   
   .menu {
     list-style: none;
@@ -101,3 +104,145 @@
     background-color: #ff8800;
     color: white;
   }
+  /* ---------------- RESPONSIVE ---------------- */
+
+/* Tablette (max-width: 992px) */
+@media (max-width: 992px) {
+  .menu {
+    gap: 20px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+
+  .dropdown {
+    font-size: 15px;
+    padding: 8px 14px;
+    padding-right: 30px;
+  }
+
+  .dropdown-arrow {
+    font-size: 18px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    font-size: 16px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn,
+  .dropdown {
+    width: 90%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .dropdown-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dropdown-arrow {
+    right: 20px;
+  }
+}
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.burger-icon {
+  background: none;
+  border: none;
+  color: #0f3b67;
+  cursor: pointer;
+  display: none;
+}
+
+/* Cacher par défaut en desktop */
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .burger-icon {
+    display: block;
+  }
+
+  .navbar-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    gap: 20px;
+    animation: fadeSlide 0.3s ease-in-out;
+  }
+
+  .navbar-content.open {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* Animation d’apparition */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

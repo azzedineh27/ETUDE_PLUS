@@ -95,3 +95,69 @@
   text-decoration : underline; 
   color : white; 
 }
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablette (max-width: 992px) */
+@media (max-width: 992px) {
+  .etudeplus-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .etudeplus-text h2 {
+    font-size: 30px;
+  }
+
+  .etudeplus-text h3 {
+    font-size: 22px;
+  }
+
+  .etudeplus-point {
+    text-align: left;
+  }
+
+  .btn-soutien {
+    font-size: 15px;
+    padding: 10px 25px;
+  }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .etudeplus {
+    padding: 60px 20px;
+  }
+
+  .etudeplus-text {
+    font-size: 16px;
+  }
+
+  .etudeplus-text h2 {
+    font-size: 24px;
+  }
+
+  .etudeplus-text h3 {
+    font-size: 18px;
+  }
+
+  .etudeplus-point p {
+    font-size: 15px;
+  }
+
+  .etudeplus-icon {
+    font-size: 20px;
+  }
+
+  .etudeplus-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .btn-soutien {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}

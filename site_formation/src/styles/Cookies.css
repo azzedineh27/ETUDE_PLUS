@@ -48,3 +48,61 @@
   background-color: #e07b00;
   color: white;
 }
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablette */
+@media (max-width: 992px) {
+  .cookies-popup {
+    width: 90%;
+    right: 5%;
+    bottom: 20px;
+  }
+
+  .cookies-content h3 {
+    font-size: 17px;
+  }
+
+  .cookies-content p {
+    font-size: 13px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cookies-popup {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 15px;
+  }
+
+  .cookies-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .cookies-content p {
+    font-size: 14px;
+  }
+
+  .cookies-content h3 {
+    font-size: 18px;
+  }
+}

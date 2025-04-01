@@ -134,3 +134,65 @@
 .contact-notification .message-text {
   flex: 1;
 }
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablettes (entre 600px et 992px) */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .contact-text {
+    max-width: 100%;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 36px;
+  }
+}
+
+/* Mobiles (moins de 600px) */
+@media (max-width: 600px) {
+  .contact {
+    padding: 60px 20px;
+  }
+
+  .contact-title {
+    font-size: 28px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+  }
+
+  .contact-form button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .contact-text {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .contact-notification {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+}

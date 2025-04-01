@@ -132,3 +132,73 @@
   color: #cc0000;
   margin-right: 8px;
 }
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablette (max-width: 992px) */
+@media (max-width: 992px) {
+  .formules-title {
+    font-size: 36px;
+  }
+
+  .formule-card {
+    width: 45%;
+  }
+
+  .formule-card h3 {
+    font-size: 20px;
+  }
+
+  .formule-description,
+  .formule-liste li,
+  .prix {
+    font-size: 15px;
+  }
+
+  .btn-formule {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .formules {
+    padding: 60px 20px;
+  }
+
+  .formules-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .formule-card {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .formule-card h3 {
+    font-size: 18px;
+  }
+
+  .formule-description,
+  .formule-liste li,
+  .prix {
+    font-size: 14px;
+  }
+
+  .btn-formule {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .badge {
+    top: -10px;
+    right: -10px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .formule-liste {
+    margin-bottom: 15px;
+  }
+}

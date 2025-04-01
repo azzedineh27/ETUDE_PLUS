@@ -1,24 +1,23 @@
-# Logs
-logs
+# Fichiers sensibles
+.env
+.env.local
+*.key
+*.pem
+*.crt
+firebase-config.js
+config.js
+secrets.js
+site_formation/src/components/Contact.jsx
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# Logs et système
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# React/Vite/Next caches
+.vite/
+.next/

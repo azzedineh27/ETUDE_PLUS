@@ -72,8 +72,10 @@ html, body {
   
   /* Responsive */
   @media (max-width: 768px) {
+    body {
+    padding-top: 60px; /* augmente l'espace pour la navbar + menu déroulant */
+  }
     .container {
       padding: 10px;
     }
   }
-  

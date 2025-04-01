@@ -1,41 +1,37 @@
 .accueil {
   width: 100%;
-  padding: 100px 40px; /* Réduit l'espace en haut */
+  padding: 100px 40px;
   background-color: #f8f9fa;
   display: flex;
-  flex-direction: column; /* Permet de placer le h1 au-dessus */
+  flex-direction: column;
   align-items: center;
 }
 
-/* Titre h1 bien séparé au-dessus du contenu */
 .accueil-title {
   text-align: center;
-  font-size: 48px; /* Augmente la taille du titre */
+  font-size: 48px;
   font-weight: bold;
   color: #1e3a8a;
-  margin-bottom: 40px; /* Espace entre le titre et le contenu */
-  margin-top: 30px; /* Espace entre le titre et le contenu */
+  margin-bottom: 40px;
+  margin-top: 30px;
   max-width: 80%;
 }
 
-/* Conteneur principal aligné à gauche */
 .accueil-container {
   max-width: 1200px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Texte aligné à gauche */
+  justify-content: flex-start;
   gap: 40px;
   padding-top: 20px;
   width: 100%;
 }
 
-/* Bloc texte */
 .accueil-text {
   flex: 1;
   color: #1e3a8a;
 }
 
-/* Taille et marges des titres et paragraphes */
 .accueil-text h2 {
   font-size: 22px;
   margin-bottom: 15px;
@@ -49,10 +45,57 @@
   max-width: 600px;
 }
 
-/* Image */
 .accueil-image img {
   width: 450px;
   height: auto;
   border-radius: 5px;
   border: 3px solid orange;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablettes et petits laptops */
+@media (max-width: 992px) {
+  .accueil-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .accueil-text h2,
+  .accueil-text p {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .accueil-image img {
+    width: 80%;
+    max-width: 400px;
+  }
+}
+
+/* Téléphones */
+@media (max-width: 600px) {
+  .accueil {
+    padding: 60px 20px;
+  }
+
+  .accueil-title {
+    font-size: 32px;
+    max-width: 100%;
+  }
+
+  .accueil-text h2 {
+    font-size: 20px;
+  }
+
+  .accueil-text p {
+    font-size: 16px;
+  }
+
+  .accueil-image img {
+    width: 100%;
+    max-width: 300px;
+  }
 }
