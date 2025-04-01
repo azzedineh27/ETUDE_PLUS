@@ -40,7 +40,11 @@ const Navbar = () => {
 
         <div className="language-dropdown">
           <div className="dropdown-wrapper">
-            <select onChange={changeLanguage} className="dropdown">
+            <select
+              onChange={changeLanguage}
+              className="dropdown"
+              value={i18n.language}
+            >
               <option value="fr">{sanitize(t("navbar_language_fr"))}</option>
               <option value="en">{sanitize(t("navbar_language_en"))}</option>
               <option value="spa">{sanitize(t("navbar_language_spa"))}</option>
