@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 15px 40px;
-    z-index: 1000;
-  }
+    z-index: 1000;    
+}
   
   .logo img {
     height: 45px;
@@ -244,5 +244,25 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (min-width: 768px) and (max-width: 1050px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 10px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-buttons {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 }

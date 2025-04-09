@@ -4,7 +4,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationFR from './src/locales/fr/translationFR.json';
 import translationEN from './src/locales/en/translationEN.json';
-import translationSPA from './src/locales/spa/translationSPA.json';
+import translationAE from './src/locales/ae/translationAE.json';
+import translationTR from './src/locales/tr/translationTR.json';
 
 i18n
   .use(LanguageDetector)
@@ -13,7 +14,8 @@ i18n
     resources: {
       fr: { translation: translationFR },
       en: { translation: translationEN },
-      spa: { translation: translationSPA }
+      ae: { translation: translationAE },
+      tr: { translation: translationTR },
     },
     fallbackLng: 'fr',
     interpolation: {

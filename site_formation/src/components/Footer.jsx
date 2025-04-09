@@ -72,7 +72,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/etude-plus-seine-saint-denis/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
-            <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/33664723303" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp />
             </a>
           </div>

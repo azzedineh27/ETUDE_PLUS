@@ -59,7 +59,8 @@ const Navbar = () => {
               >
                 <option value="fr">{sanitize(t("navbar_language_fr"))}</option>
                 <option value="en">{sanitize(t("navbar_language_en"))}</option>
-                <option value="spa">{sanitize(t("navbar_language_spa"))}</option>
+                <option value="ae">{sanitize(t("navbar_language_ae"))}</option>
+                <option value="tr">{sanitize(t("navbar_language_tr"))}</option>
               </select>
               <MdOutlineKeyboardArrowDown className="dropdown-arrow" />
             </div>
