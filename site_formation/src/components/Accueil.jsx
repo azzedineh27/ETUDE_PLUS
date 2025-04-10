@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/Accueil.css";
-import formationImage from "../assets/formation_etude_plus.jpg";
+import formationImage from "/public/img_header.webp";
 import DOMPurify from "dompurify";
 
 const Accueil = () => {

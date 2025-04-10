@@ -1,112 +1,176 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    z-index: 1000;    
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  z-index: 1000;
 }
-  
-  .logo img {
-    height: 45px;
-    width: auto; /* <-- important pour garder les proportions naturelles */
-    object-fit: contain; /* sécurité en plus pour éviter l'étirement */
-  }
-  
-  
-  .menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li a {
-    position: relative;
-    text-decoration: none;
-    font-size : 18px ; 
-  }
-  
-  .menu li a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ff8800;
-    transition: width 0.3s ease;
-  }
-  
-  .menu li a:hover::before {
-    width: 100%;
-  }
-  
-  
-  .nav-buttons {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .btn {
-    background-color: #ff8800;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #e07b00;
-  }
-  
 
-  .language-dropdown .dropdown-wrapper {
-    position: relative;
-    display: flex;
+.logo img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff8800;
+  transition: width 0.3s ease;
+}
+
+.menu li a:hover::before {
+  width: 100%;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  background-color: #ff8800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e07b00;
+}
+
+.language-dropdown .dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  background-color: #ff8800;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+}
+
+.dropdown:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #ff8800;
+  color: white;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  color: white;
+  font-size: 20px;
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.burger-icon {
+  background: none;
+  border: none;
+  color: #0f3b67;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* --------------- ANIMATION --------------- */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablette + petit desktop (jusqu'à 1350px) */
+@media (min-width: 768px) and (max-width: 1350px) {
+  .navbar-content {
+    flex-direction: column;
     align-items: center;
+    gap: 15px;
+    padding-top: 10px;
   }
-  
-  .dropdown {
-    background-color: #ff8800;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    appearance: none; /* pour supprimer le style natif */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding-right: 30px; /* laisse de la place pour la flèche */
-  }
-  .dropdown-arrow {
-    position: absolute;
-    right: 12px;
-    pointer-events: none; /* laisse les clics passer sur le select */
-    color: white;
-    font-size: 20px;
-  }
-  
-  .dropdown:focus {
-    outline: none;
-    box-shadow: none;
-    background-color: #ff8800;
-    color: white;
-  }
-  /* ---------------- RESPONSIVE ---------------- */
 
-/* Tablette (max-width: 992px) */
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-buttons {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn,
+  .dropdown {
+    max-width: 240px;
+  }
+
+  .dropdown-wrapper {
+    justify-content: center;
+  }
+}
+
+/* Tablette classique (max-width: 992px) */
 @media (max-width: 992px) {
   .menu {
     gap: 20px;
@@ -137,11 +201,29 @@
     padding: 15px 20px;
   }
 
+  .burger-icon {
+    display: block;
+  }
+
   .logo {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+  }
+
+  .navbar-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    gap: 20px;
+    animation: fadeSlide 0.3s ease-in-out;
+  }
+
+  .navbar-content.open {
+    display: flex;
   }
 
   .menu {
@@ -165,104 +247,28 @@
 
   .btn,
   .dropdown {
-    width: 90%;
+    width: 100%;
+    max-width: 200px;
+    min-height: 45px;
     text-align: center;
     font-size: 16px;
+    padding: 10px 20px;
+    padding-right: 45px; /* plus d’espace pour la flèche */
+    box-sizing: border-box;
   }
-
+  
   .dropdown-wrapper {
     width: 100%;
+    max-width: 220px;
     justify-content: center;
+    position: relative;
   }
-
+  
   .dropdown-arrow {
-    right: 20px;
-  }
-}
-.navbar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.burger-icon {
-  background: none;
-  border: none;
-  color: #0f3b67;
-  cursor: pointer;
-  display: none;
-}
-
-/* Cacher par défaut en desktop */
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .burger-icon {
-    display: block;
-  }
-
-  .navbar-content {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-    gap: 20px;
-    animation: fadeSlide 0.3s ease-in-out;
-  }
-
-  .navbar-content.open {
-    display: flex;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .nav-buttons {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    align-items: center;
-  }
-}
-
-/* Animation d’apparition */
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media (min-width: 768px) and (max-width: 1050px) {
-  .navbar-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding-top: 10px;
-  }
-
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .nav-buttons {
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    right: 16px;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
   }
 }

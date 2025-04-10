@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/EtudePlus.css";
-import formationImage from "../assets/formation_etude_plus.jpg";
+import formationImage from "/public/img_header.webp";
 import { useTranslation } from "react-i18next";
 import { FaBookOpen, FaGraduationCap, FaUserFriends } from "react-icons/fa";
 import DOMPurify from "dompurify";

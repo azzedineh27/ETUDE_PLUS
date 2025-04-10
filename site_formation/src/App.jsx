@@ -1,37 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Accueil from "./components/Accueil";
-import Formules from "./components/Formules";
 import Contact from "./components/Contact";
-import Avis from "./components/Avis";
-import FAQ from "./components/FAQ";
-import EtudePlus from "./components/EtudePlus"; 
 import Footer from "./components/Footer";
 import Cookies from "./components/Cookies";
-import '../i18n';
+import "../i18n";
+
+// Lazy load des sections non critiques
+const Formules = lazy(() => import("./components/Formules"));
+const Avis = lazy(() => import("./components/Avis"));
+const FAQ = lazy(() => import("./components/FAQ"));
+const EtudePlus = lazy(() => import("./components/EtudePlus"));
 
 function App() {
   useEffect(() => {
-    // Vérifiez si l'outil Google Analytics est disponible
     if (window.gtag) {
-      // Configuration de l'événement Google Analytics (session_duration)
       const sessionStartTime = localStorage.getItem("sessionStartTime");
       if (!sessionStartTime) {
         localStorage.setItem("sessionStartTime", Date.now());
       }
 
       return () => {
-        // Enregistrer la durée de la session quand le composant se démonte
         const sessionStartTime = localStorage.getItem("sessionStartTime");
         if (sessionStartTime) {
           const sessionDuration = Date.now() - parseInt(sessionStartTime, 10);
           localStorage.setItem("sessionDuration", sessionDuration);
 
-          // Envoi de la durée de la session à Google Analytics
           gtag('event', 'session_duration', {
-            'event_category': 'engagement',
-            'event_label': 'page_visit',
-            'value': sessionDuration / 1000, // Convertir en secondes
+            event_category: 'engagement',
+            event_label: 'page_visit',
+            value: sessionDuration / 1000,
           });
         }
       };
@@ -42,11 +40,16 @@ function App() {
     <div>
       <Navbar />
       <Accueil />
-      <Formules />
       <Contact />
-      <Avis />
-      <FAQ />
-      <EtudePlus />
+
+      {/* Lazy loaded sections */}
+      <Suspense fallback={<div>Chargement...</div>}>
+        <Formules />
+        <Avis />
+        <FAQ />
+        <EtudePlus />
+      </Suspense>
+
       <Footer />
       <Cookies />
     </div>
