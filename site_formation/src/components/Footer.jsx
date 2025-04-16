@@ -40,8 +40,19 @@ const Footer = () => {
             >
               {sanitize(t("footer_privacy"))}
             </a>
-
           </p>
+          <p>
+            <a
+              href="/livret_accueil_etudeplus.pdf"
+              className="footer-link"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Livret d’Accueil
+            </a>
+          </p>
+
         </div>
 
         <div className="footer-section">
