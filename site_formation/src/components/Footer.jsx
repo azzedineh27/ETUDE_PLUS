@@ -32,7 +32,7 @@ const Footer = () => {
           <hr />
           <p>
             <a
-              href="./public/rgpd_etudeplusformation.pdf"
+              href="/rgpd_etudeplusformation.pdf"
               className="footer-link"
               download
               target="_blank"
