@@ -1,0 +1,47 @@
+.valeurs-section {
+    padding: 60px 20px;
+    background-color: #fff8f0;
+    text-align: center;
+  }
+  
+  .valeurs-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0f3b67;
+  }
+  
+  .valeurs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .valeur-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0f3b67;
+  }
+  
+  .valeur-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .valeur-icon {
+    font-size: 32px;
+    color: #ff8800;
+    margin-bottom: 10px;
+  }
+  
+  .valeur-label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  

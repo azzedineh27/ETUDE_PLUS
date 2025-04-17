@@ -4,6 +4,7 @@ import Accueil from "./components/Accueil";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Cookies from "./components/Cookies";
+import Valeurs from "./components/Valeurs";
 import "../i18n";
 
 // Lazy load des sections non critiques
@@ -45,7 +46,7 @@ function App() {
       {/* Lazy loaded sections */}
       <Suspense fallback={<div>Chargement...</div>}>
         <Formules />
-        <Avis />
+        <Valeurs />
         <FAQ />
         <EtudePlus />
       </Suspense>

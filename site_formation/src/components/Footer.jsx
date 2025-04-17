@@ -49,7 +49,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Livret d’Accueil
+              {sanitize(t("footer_livret"))}
             </a>
           </p>
 

@@ -14,31 +14,30 @@ const Formules = () => {
       FORBID_ATTR: ["style", "onerror", "onload"]
     });
 
-  const offres = [
-    {
-      titre: sanitize(t("formules_standard_title")),
-      texte: sanitize(t("formules_standard_text")),
-      prix: sanitize(t("formules_standard_price")),
-      avantages: ["10h de cours", "Support en ligne", "Préparation DALF"],
-      malus: ["Pas de suivi personnalisé"],
-      style: "standard"
-    },
-    {
-      titre: sanitize(t("formules_medium_title")),
-      texte: sanitize(t("formules_medium_text")),
-      prix: sanitize(t("formules_medium_price")),
-      avantages: ["20h de cours", "Accès illimité", "Suivi personnalisé", "Préparation DALF"],
-      style: "medium"
-    },
-    {
-      titre: sanitize(t("formules_premium_title")),
-      texte: sanitize(t("formules_premium_text")),
-      prix: sanitize(t("formules_premium_price")),
-      avantages: ["30h de cours", "Coaching individuel", "Correction détaillée", "Préparation DALF"],
-      style: "premium"
-    }
-  ];
-
+    const offres = [
+      {
+        titre: sanitize(t("formules_standard_title")),
+        texte: sanitize(t("formules_standard_text")),
+        prix: sanitize(t("formules_standard_price")),
+        avantages: t("formules_standard_avantages", { returnObjects: true }),
+        style: "standard"
+      },
+      {
+        titre: sanitize(t("formules_medium_title")),
+        texte: sanitize(t("formules_medium_text")),
+        prix: sanitize(t("formules_medium_price")),
+        avantages: t("formules_medium_avantages", { returnObjects: true }),
+        style: "essentiel"
+      },
+      {
+        titre: sanitize(t("formules_premium_title")),
+        texte: sanitize(t("formules_premium_text")),
+        prix: sanitize(t("formules_premium_price")),
+        avantages: t("formules_premium_avantages", { returnObjects: true }),
+        style: "premium"
+      }
+    ];
+    
   return (
     <section className="formules" id="formules">
       <h2 className="formules-title" dangerouslySetInnerHTML={{ __html: sanitize(t("formules_title")) }} />
@@ -61,7 +60,7 @@ const Formules = () => {
             </ul>
             <p className="prix" dangerouslySetInnerHTML={{ __html: offre.prix }} />
             <a href="#contact" className="btn-formule">
-              {sanitize("Nous contacter")}
+              {sanitize(t("formules_contact_button"))}
             </a>
 
           </div>
