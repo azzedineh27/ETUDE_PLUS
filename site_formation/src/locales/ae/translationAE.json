@@ -62,13 +62,13 @@
   "formules_title": "خططنا",
   "formules_standard_title": "الأساسية",
   "formules_standard_text": "10 ساعات دروس",
-  "formules_standard_price": "فقط 290€",
+  "formules_standard_price": "290€",
   "formules_medium_title": "الضرورية",
   "formules_medium_text": "20 ساعة دروس",
-  "formules_medium_price": "فقط 490€",
+  "formules_medium_price": "490€",
   "formules_premium_title": "المميزة",
   "formules_premium_text": "30 ساعة دروس",
-  "formules_premium_price": "فقط 890€",
+  "formules_premium_price": "890€",
   "formules_standard_avantages": [
   "مواد الدورة + حساب Teams",
   "التحضير لـ TCF/DELF/DALF",
@@ -86,7 +86,8 @@
   "مواد الدورة + حساب Teams",
   "التحضير لـ TCF/DELF/DALF",
   "تدريب فردي",
-  "رسوم التسجيل مشمولة"
+  "رسوم التسجيل مجانية"
+
 ],
 "formules_contact_button": "اتصل بنا",
 "valeurs_title": "قيمنا",

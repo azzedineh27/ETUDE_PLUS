@@ -62,13 +62,13 @@
   "formules_title": "PAKETLERİMİZ",
   "formules_standard_title": "STANDART",
   "formules_standard_text": "10 saat ders",
-  "formules_standard_price": "Sadece 290€",
+  "formules_standard_price": "290€",
   "formules_medium_title": "TEMEL",
   "formules_medium_text": "20 saat ders",
-  "formules_medium_price": "Sadece 490€",
+  "formules_medium_price": "490€",
   "formules_premium_title": "PREMIUM",
   "formules_premium_text": "30 saat ders",
-  "formules_premium_price": "Sadece 890€",
+  "formules_premium_price": "890€",
   "formules_standard_avantages": [
   "Ders materyali + Teams hesabı",
   "TCF/DELF/DALF hazırlığı",
@@ -86,7 +86,8 @@
   "Ders materyali + Teams hesabı",
   "TCF/DELF/DALF hazırlığı",
   "Birebir koçluk",
-  "Kayıt ücreti dahil"
+  "Kayıt ücreti ücretsiz"
+
 ],
 "formules_contact_button": "Bize ulaşın",
 "valeurs_title": "Değerlerimiz",
