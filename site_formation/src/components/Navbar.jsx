@@ -4,6 +4,8 @@ import "../styles/Navbar.css";
 import logo from "/public/etudeplusformation.webp";
 import { MdOutlineKeyboardArrowDown, MdMenu, MdClose } from "react-icons/md";
 import DOMPurify from "dompurify";
+import { Link } from "react-scroll";
+
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -37,18 +39,39 @@ const Navbar = () => {
       </div>
 
       <div className={`navbar-content ${isMenuOpen ? "open" : ""}`}>
-        <ul className="menu">
-          <li><a href="#accueil" onClick={() => setIsMenuOpen(false)}>{sanitize(t("navbar_menu_accueil"))}</a></li>
-          <li><a href="#formules" onClick={() => setIsMenuOpen(false)}>{sanitize(t("navbar_menu_formules"))}</a></li>
-          <li><a href="#faq" onClick={() => setIsMenuOpen(false)}>{sanitize(t("navbar_menu_faq"))}</a></li>
-          <li><a href="#avis" onClick={() => setIsMenuOpen(false)}>{sanitize(t("navbar_menu_avis"))}</a></li>
-          <li><a href="#etudeplus" onClick={() => setIsMenuOpen(false)}>{sanitize(t("navbar_menu_etudeplus"))}</a></li>
-        </ul>
+      <ul className="menu">
+        <li>
+          <Link to="accueil" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
+            {sanitize(t("navbar_menu_accueil"))}
+          </Link>
+        </li>
+        <li>
+          <Link to="formules" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
+            {sanitize(t("navbar_menu_formules"))}
+          </Link>
+        </li>
+        <li>
+          <Link to="faq" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
+            {sanitize(t("navbar_menu_faq"))}
+          </Link>
+        </li>
+        <li>
+          <Link to="avis" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
+            {sanitize(t("navbar_menu_avis"))}
+          </Link>
+        </li>
+        <li>
+          <Link to="etudeplus" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
+            {sanitize(t("navbar_menu_etudeplus"))}
+          </Link>
+        </li>
+      </ul>
 
         <div className="nav-buttons">
-          <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+          <Link to="contact" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
             <button className="btn">{sanitize(t("navbar_button_contact"))}</button>
-          </a>
+          </Link>
+
 
           <div className="language-dropdown">
             <div className="dropdown-wrapper">
