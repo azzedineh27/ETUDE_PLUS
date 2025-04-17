@@ -5,8 +5,12 @@ import DOMPurify from "dompurify";
 
 const Cookies = () => {
   const { t, i18n } = useTranslation();
-  const [visible, setVisible] = useState(true);
 
+  const [visible, setVisible] = useState(() => {
+    const accepted = localStorage.getItem("cookiesAccepted");
+    return accepted !== "true" && accepted !== "false";
+  });
+  
   // Configuration de DOMPurify avec autorisation limitée
   const sanitize = (value) => {
     return DOMPurify.sanitize(value, {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/Navbar.css";
-import logo from "/public/etudeplusformation.webp";
+import logo from "/etudeplusformation.webp";
 import { MdOutlineKeyboardArrowDown, MdMenu, MdClose } from "react-icons/md";
 import DOMPurify from "dompurify";
 import { Link } from "react-scroll";

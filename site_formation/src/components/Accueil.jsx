@@ -1,13 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/Accueil.css";
-import formationImage from "/public/img_header.webp";
+import formationImage from "/img_header.webp";
 import DOMPurify from "dompurify";
 
 const Accueil = () => {
   const { t } = useTranslation();
 
-  // Fonction de purification
   const sanitize = (content) => DOMPurify.sanitize(content, { ALLOWED_TAGS: [] });
 
   return (
