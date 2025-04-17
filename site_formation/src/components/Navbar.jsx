@@ -51,13 +51,13 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="faq" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
-            {sanitize(t("navbar_menu_faq"))}
+          <Link to="avis" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
+            {sanitize(t("navbar_menu_avis"))}
           </Link>
         </li>
         <li>
-          <Link to="avis" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
-            {sanitize(t("navbar_menu_avis"))}
+          <Link to="faq" smooth={true} duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>
+            {sanitize(t("navbar_menu_faq"))}
           </Link>
         </li>
         <li>
