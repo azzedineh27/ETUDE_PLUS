@@ -64,10 +64,10 @@
   "formules_title": "NOS FORMULES",
   "formules_standard_title": "STANDARD",
   "formules_standard_text": "10h de cours",
-  "formules_standard_price": "290€",
+  "formules_standard_price": " A partir de 290€",
   "formules_medium_title": "ESSENTIEL",
   "formules_medium_text": "20h de cours",
-  "formules_medium_price": "490€",
+  "formules_medium_price": "A partir de 490€",
   "formules_premium_title": "PREMIUM",
   "formules_premium_text": "30h de cours",
   "formules_premium_price": "890€",
@@ -80,9 +80,8 @@
 "formules_medium_avantages": [
   "Support de cours + Compte Teams",
   "Préparation TCF/DELF/DALF",
-  "Suivi personnalisé",
-  "Frais d'inscription (Montant à définir)",
-  "Réduction de 90 euros"
+  "Suivi personnalisé","Réduction de 90 euros incluse",
+  "Frais d'inscription (Montant à définir)"
 ],
 "formules_premium_avantages": [
   "Support de cours + Compte Teams",

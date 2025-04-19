@@ -47,16 +47,21 @@ const Formules = () => {
             <h3 dangerouslySetInnerHTML={{ __html: offre.titre }} />
             <p className="formule-description" dangerouslySetInnerHTML={{ __html: offre.texte }} />
             <ul className="formule-liste">
-              {offre.avantages.map((avantage, idx) => (
-                <li key={idx}>
-                  <FaCheckCircle className="check-icon" /> {sanitize(avantage)}
-                </li>
-              ))}
-              {offre.malus?.map((malus, idx) => (
-                <li key={`malus-${idx}`} className="malus">
-                  <FaTimesCircle className="times-icon" /> {sanitize(malus)}
-                </li>
-              ))}
+              {offre.avantages.map((avantage, idx) => {
+                const isFraisInscription = avantage.toLowerCase().includes("frais d'inscription");
+                const isFirstTwoOffers = index === 0 || index === 1;
+                return (
+                  <li key={idx}>
+                    {isFraisInscription && isFirstTwoOffers ? (
+                      <span className="plus-icon">+</span>
+                    ) : (
+                      <FaCheckCircle className="check-icon" />
+                    )}{" "}
+                    {sanitize(avantage)}
+                  </li>
+                );
+              })}
+
             </ul>
             <p className="prix" dangerouslySetInnerHTML={{ __html: offre.prix }} />
             <a href="#contact" className="btn-formule">

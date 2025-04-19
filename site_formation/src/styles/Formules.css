@@ -202,3 +202,9 @@
     margin-bottom: 15px;
   }
 }
+.plus-icon {
+  color: #ff8800;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 5px;
+}
