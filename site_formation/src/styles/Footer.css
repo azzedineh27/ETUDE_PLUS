@@ -17,9 +17,9 @@
   justify-content: space-between;
   width: 100%;
   margin: auto;
-  gap: 40px; /* Espace entre les sections */
+  gap: 40px;
+  padding-bottom: 30px;
 }
-
 /* Sections du footer */
 .footer-section {
   flex: 1; /* Chaque section prend une part égale de l'espace */
@@ -42,11 +42,10 @@
   border: 1px solid orange;
 }
 
-/* Texte */
 .footer-section p {
   font-size: 17px;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  line-height: 1.4;       /* légèrement réduit */
+  margin-bottom: 8px;     /* réduit de 15px à 8px */
 }
 
 /* Liens */

@@ -52,7 +52,28 @@ const Footer = () => {
               {sanitize(t("footer_livret"))}
             </a>
           </p>
-
+          <p>
+            <a
+              href="/candidature.docx"
+              className="footer-link"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {sanitize(t("footer_candidature"))}
+            </a>
+          </p>
+          <p>
+            <a
+              href="/plaquette_formation.pdf"
+              className="footer-link"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {sanitize(t("footer_plaquette"))}
+            </a>
+          </p>
         </div>
 
         <div className="footer-section">
