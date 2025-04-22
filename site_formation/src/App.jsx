@@ -45,10 +45,10 @@ function App() {
 
       {/* Lazy loaded sections */}
       <Suspense fallback={<div>Chargement...</div>}>
+        <Avis />
         <Formules />
         <Valeurs />
         <FAQ />
-        <Avis />
         <EtudePlus />
       </Suspense>
 
