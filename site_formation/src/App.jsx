@@ -48,6 +48,7 @@ function App() {
         <Formules />
         <Valeurs />
         <FAQ />
+        <Avis />
         <EtudePlus />
       </Suspense>
 

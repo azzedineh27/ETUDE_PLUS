@@ -4,16 +4,15 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Empêcher le body de dépasser */
 html, body {
   width: 100%;
   font-family : Arial ; 
-  scroll-behavior: smooth; /* Active le défilement fluide */
+  scroll-behavior: smooth;
 }
-
-  
   /* Gestion des marges et espacements globaux */
   .container {
     max-width: 1200px;
