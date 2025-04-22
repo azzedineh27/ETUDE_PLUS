@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://etudeplusforma.fr/sitemap.xml
+Sitemap: https://www.etudeplusforma.fr/sitemap.xml
