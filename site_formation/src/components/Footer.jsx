@@ -65,7 +65,7 @@ const Footer = () => {
           </p>
           <p>
             <a
-              href="/plaquette_formation.pdf"
+              href="/plaquette_forma.pdf"
               className="footer-link"
               download
               target="_blank"

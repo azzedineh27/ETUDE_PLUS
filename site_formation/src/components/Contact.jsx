@@ -159,10 +159,21 @@ const Contact = () => {
           </button>
         </form>
 
-        <div className="contact-text">
-          <p dangerouslySetInnerHTML={{ __html: sanitize(t("contact_text_1")) }} />
-          <p dangerouslySetInnerHTML={{ __html: sanitize(t("contact_text_2")) }} />
-          <p dangerouslySetInnerHTML={{ __html: sanitize(t("contact_text_3")) }} />
+        <div className="contact-text-wrapper">
+          <a
+            href="/path/to/ton-fichier.pdf"
+            className="download-link"
+            download
+          >
+            {sanitize(t("contact_link"))}
+          </a>
+
+
+          <div className="contact-text">
+            <p dangerouslySetInnerHTML={{ __html: sanitize(t("contact_text_1")) }} />
+            <p dangerouslySetInnerHTML={{ __html: sanitize(t("contact_text_2")) }} />
+            <p dangerouslySetInnerHTML={{ __html: sanitize(t("contact_text_3")) }} />
+          </div>
         </div>
       </div>
     </section>
