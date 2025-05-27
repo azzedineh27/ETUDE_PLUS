@@ -1,5 +1,6 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
+import DeadlinePopup from "./components/DeadlinePopup";
 import Accueil from "./components/Accueil";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -40,6 +41,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <DeadlinePopup />
       <Accueil />
       <Contact />
 
