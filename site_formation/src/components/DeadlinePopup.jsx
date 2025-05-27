@@ -16,7 +16,7 @@ const DeadlinePopup = () => {
         <div className="popup-row">
           <div className="popup-icon">📅</div>
           <p className="popup-text">
-            <strong>Assistant RH</strong> : clôture des inscriptions le <strong>15 juin 2025</strong>.
+            Clôture des inscriptions le <strong>28 juin 2025</strong>.
           </p>
         </div>
 
