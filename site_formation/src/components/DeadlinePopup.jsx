@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../styles/DeadlinePopup.css';
 
 const DeadlinePopup = () => {
   const [visible, setVisible] = useState(true);
+  const { t } = useTranslation();
 
   if (!visible) return null;
 
@@ -16,12 +18,12 @@ const DeadlinePopup = () => {
         <div className="popup-row">
           <div className="popup-icon">📅</div>
           <p className="popup-text">
-            Clôture des inscriptions le <strong>28 juin 2025</strong>.
+            {t('popup_deadline_text')}
           </p>
         </div>
 
         <a className="popup-button" href="#contact">
-          Contactez-nous
+          {t('popup_contact_button')}
         </a>
       </div>
     </div>
