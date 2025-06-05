@@ -1,0 +1,97 @@
+.dates-section {
+  padding: 3rem 1.5rem;
+  background: #f9fafb;
+}
+
+.dates-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f1c5d;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.dates-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #f97316;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.dates-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dates-table-container {
+  flex: 1;
+  min-width: 340px;
+}
+
+.dates-subtitle {
+  color: #f97316;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.dates-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+
+.dates-table th,
+.dates-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.9rem 1rem;
+  text-align: center;
+}
+
+.dates-table th {
+  background-color: #0f1c5d;
+  color: white;
+  font-weight: 600;
+}
+
+.dates-table tr:nth-child(even) {
+  background-color: #fff7ed;
+}
+
+.video-container {
+  flex: 1;
+  min-width: 340px;
+  text-align: center;
+}
+
+.video-wrapper {
+  border: 6px solid #0f1c5d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+.video-caption {
+  margin-top: 0.8rem;
+  font-weight: 500;
+  color: #0f1c5d;
+  font-size: 0.95rem;
+}

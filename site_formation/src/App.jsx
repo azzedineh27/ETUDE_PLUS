@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import DeadlinePopup from "./components/DeadlinePopup";
 import Accueil from "./components/Accueil";
 import Contact from "./components/Contact";
+import Dates from "./components/Dates";
 import Footer from "./components/Footer";
 import Cookies from "./components/Cookies";
 import Valeurs from "./components/Valeurs";
@@ -48,6 +49,7 @@ function App() {
       {/* Lazy loaded sections */}
       <Suspense fallback={<div>Chargement...</div>}>
         <Formules />
+        <Dates />
         <Avis />
         <Valeurs />
         <FAQ />
