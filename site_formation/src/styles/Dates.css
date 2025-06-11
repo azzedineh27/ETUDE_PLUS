@@ -1,27 +1,17 @@
 .dates-section {
-  padding: 3rem 1.5rem;
-  background: #f9fafb;
+  padding: 4rem 1.5rem;
+  background: #ffffff;
 }
 
 .dates-title {
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #0f1c5d;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0f3b67;
+  margin-bottom: 2.5rem;
   position: relative;
-}
-
-.dates-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background-color: #f97316;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dates-content {
@@ -30,43 +20,80 @@
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .dates-table-container {
   flex: 1;
   min-width: 340px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .dates-subtitle {
-  color: #f97316;
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  color: #ff8800;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
   text-align: left;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.dates-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #ff8800;
+}
+
+.table-wrapper {
+  overflow-x: hidden; /* Changé de 'auto' à 'hidden' pour supprimer le scroll */
+  width: 100%; /* Ajouté pour s'assurer que le wrapper prend toute la largeur */
 }
 
 .dates-table {
   width: 100%;
-  border-collapse: collapse;
-  font-family: 'Segoe UI', sans-serif;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 0.95rem;
-}
-
-.dates-table th,
-.dates-table td {
-  border: 1px solid #e5e7eb;
-  padding: 0.9rem 1rem;
-  text-align: center;
+  min-width: unset; /* Supprimé la min-width fixe */
 }
 
 .dates-table th {
-  background-color: #0f1c5d;
+  background-color: #0f3b67;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
+  padding: 1rem;
+  text-align: left;
+  position: sticky;
+  top: 0;
 }
 
-.dates-table tr:nth-child(even) {
-  background-color: #fff7ed;
+.dates-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.dates-table tr:not(:last-child) td {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dates-table tr:hover td {
+  background-color: rgba(255, 136, 0, 0.1);
+}
+
+.highlight-row td {
+  color: #0f3b67;
+  font-weight: 500;
 }
 
 .video-container {
@@ -76,22 +103,62 @@
 }
 
 .video-wrapper {
-  border: 6px solid #0f1c5d;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 6px solid #0f1c5d;
 }
 
 .video-wrapper video {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 0;
 }
 
 .video-caption {
-  margin-top: 0.8rem;
+  margin-top: 1rem;
   font-weight: 500;
-  color: #0f1c5d;
+  color: #ff8800;
   font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .dates-table {
+    width: 100%;
+  }
+  
+  .dates-table th, 
+  .dates-table td {
+    padding: 0.75rem;
+  }
+  
+  .dates-table td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  
+  .dates-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: calc(50% - 1rem);
+    padding-right: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #0f3b67;
+  }
+  
+  .dates-table tr {
+    margin-bottom: 1rem;
+    display: block;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .dates-table thead {
+    display: none;
+  }
 }

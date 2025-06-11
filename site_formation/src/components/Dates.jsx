@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/Dates.css";
-import formationVideo from "/test.mp4";
+import formationVideo from "/video_centre.mp4";
 
 const Dates = () => {
   const { t } = useTranslation();
@@ -13,37 +13,39 @@ const Dates = () => {
       <div className="dates-content">
         <div className="dates-table-container">
           <h3 className="dates-subtitle">{t("dates_subtitle")}</h3>
-          <table className="dates-table">
-            <thead>
-              <tr>
-                <th>{t("dates_detail")}</th>
-                <th>{t("dates_start")}</th>
-                <th>{t("dates_end")}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{t("dates_row_1")}</td>
-                <td>1<sup>er</sup> avril</td>
-                <td>40 mins</td>
-              </tr>
-              <tr>
-                <td>{t("dates_row_2")}</td>
-                <td>28 juin</td>
-                <td>28 juin</td>
-              </tr>
-              <tr>
-                <td>{t("dates_row_3")}</td>
-                <td>5 septembre 2025</td>
-                <td>5 septembre</td>
-              </tr>
-              <tr>
-                <td>{t("dates_row_4")}</td>
-                <td>13 décembre 2025</td>
-                <td>13 décembre</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="table-wrapper">
+            <table className="dates-table">
+              <thead>
+                <tr>
+                  <th>{t("dates_detail")}</th>
+                  <th>{t("dates_start")}</th>
+                  <th>{t("dates_end")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label={t("dates_detail")}>{t("dates_row_1")}</td>
+                  <td data-label={t("dates_start")}>1<sup>er</sup> avril</td>
+                  <td data-label={t("dates_end")}>40 mins</td>
+                </tr>
+                <tr>
+                  <td data-label={t("dates_detail")}>{t("dates_row_2")}</td>
+                  <td data-label={t("dates_start")}>28 juin</td>
+                  <td data-label={t("dates_end")}>28 juin</td>
+                </tr>
+                <tr>
+                  <td data-label={t("dates_detail")}>{t("dates_row_3")}</td>
+                  <td data-label={t("dates_start")}>5 septembre 2025</td>
+                  <td data-label={t("dates_end")}>5 septembre</td>
+                </tr>
+                <tr className="highlight-row">
+                  <td data-label={t("dates_detail")}>{t("dates_row_4")}</td>
+                  <td data-label={t("dates_start")}>13 décembre 2025</td>
+                  <td data-label={t("dates_end")}>13 décembre</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div className="video-container">
@@ -53,7 +55,7 @@ const Dates = () => {
               controls
               preload="metadata"
               width="100%"
-              poster="" // tu peux aussi mettre une image de couverture ici
+              poster=""
             >
               Votre navigateur ne supporte pas la lecture vidéo.
             </video>
